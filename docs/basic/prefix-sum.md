@@ -112,7 +112,7 @@ int main() {
 
   int ans = 1;
 
-  int l = 2;
+  int l = 2; \\ l不能为1是因为，在该题中边长为1得正方形就是一个点，所以可以直接从2开始
   while (l <= min(n, m)) {
     for (int i = l; i <= n; i++) {
       for (int j = l; j <= m; j++) {
@@ -128,6 +128,8 @@ int main() {
   return 0;
 }
 ```
+这个题最核心的就是b[i][j] - b[i - l][j] - b[i][j - l] + b[i - l][j - l]这段代码，通过l来控制正方形的边长，我们也可以理解为二维前缀和求 的是面积
+一维前缀和求得是长度，该题可以和[AT2412 最大の和](https://www.luogu.org/problemnew/show/AT2412) 做一下类比。
 
 ### 习题
 
